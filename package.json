@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/jaehoon0822/react-study/issues"
   },
-  "homepage": "https://github.com/jaehoon0822/react-study#readme"
+  "homepage": "https://github.com/jaehoon0822/react-study#readme",
+  "dependencies": {
+    "create-react-app": "^5.0.1"
+  }
 }
