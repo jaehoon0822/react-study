@@ -1,3 +1,4 @@
 node_modules
 .swap
 *.sh
+.code-workspace

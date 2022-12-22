@@ -1,8 +1,8 @@
-# JSX란? 
+# JSX란?
 
 > `jsx` 문법은 `html` 과 유사하지만, `template engine` 처럼 `javascript` 문법을 사용하여, 프로그래밍적으로 작성 가능한 `react` 에서 `rendering` 하기 위한 문법이다.
 
-> `jsx` 는 `create-react-app` 에서 내부적으로 사용되는 `webpack` 에서  `babel-loader` 를 통해 컴파일이 진행된다. 이때 `babel-loader` 는 브라우저에서 범용적으로 많이 사용되는 `es5` 의 `javascript` 로 변환된다.
+> `jsx` 는 `create-react-app` 에서 내부적으로 사용되는 `webpack` 에서 `babel-loader` 를 통해 컴파일이 진행된다. 이때 `babel-loader` 는 브라우저에서 범용적으로 많이 사용되는 `es5` 의 `javascript` 로 변환된다.
 
 `jsx` 는 `xml` 처럼 생겼으며, `html` 문법을 알고 있다면, 쉽게 접근 가능하기에 금새 익히기 좋다.
 
@@ -25,15 +25,15 @@ export default function app() {
 다음을 보자
 
 ```jsx
-import react from 'react';
+import react from "react";
 
 export default function app() {
-    return (
-        <div>
-            <h1>hello</h1>
-            <h1>react</h1>
-        </div>
-    );
+  return (
+    <div>
+      <h1>hello</h1>
+      <h1>react</h1>
+    </div>
+  );
 }
 ```
 
@@ -46,12 +46,12 @@ export default function app() {
 import react, { Fragment } from "react";
 
 export default function app() {
-    return (
-        <Fragment>
-            <h1>hello</h1>
-            <h1>react</h1>
-        </Fragment>
-    );
+  return (
+    <Fragment>
+      <h1>hello</h1>
+      <h1>react</h1>
+    </Fragment>
+  );
 }
 ```
 
@@ -61,12 +61,12 @@ export default function app() {
 import react, { Fragment } from "react";
 
 export default function app() {
-    return (
-        <>
-            <h1>hello</h1>
-            <h1>react</h1>
-        </>
-    );
+  return (
+    <>
+      <h1>hello</h1>
+      <h1>react</h1>
+    </>
+  );
 }
 ```
 
@@ -89,14 +89,12 @@ export default function app() {
 `react` 에서는 `Error` 가 발생한다.
 
 ```jsx
-
 const App = () => {
-    const un = undefined;
-    return un || "undefined 가 있네!!"; // Error
+  const un = undefined;
+  return un || "undefined 가 있네!!"; // Error
 };
 
 export default App;
-
 ```
 
 하지만 `jsx` 내부에 `undefined` 를 쓰는것은 허용한다.
@@ -106,18 +104,14 @@ export default App;
 
 ```jsx
 const App = () => {
-    const un = undefined;
-    return (
-        <>
-        { un || "undefined 가 있네!!" }
-        </>
-    )
+  const un = undefined;
+  return <>{un || "undefined 가 있네!!"}</>;
 };
 
 export default App;
 ```
 
-## 인라인 스타일링   
+## 인라인 스타일링
 
 `css` 를 `inline` 으로 작성시 `camelCase` 를 사용한다.
 `background-size` 는 `backgroundSize` 이다.
@@ -127,19 +121,15 @@ export default App;
 
 ```jsx
 const App = () => {
-    const content = "Hello Box";
-    const style = {
-        boxSizing: "border-box",
-        width: "100px",
-        height: "100px",
-        padding: "1em",
-        backgroundColor: "#ddd" 
-    };
-    return (
-        <div style={{style}}>
-            { content }
-        </div>
-    );
+  const content = "Hello Box";
+  const style = {
+    boxSizing: "border-box",
+    width: "100px",
+    height: "100px",
+    padding: "1em",
+    backgroundColor: "#ddd",
+  };
+  return <div style={{ style }}>{content}</div>;
 };
 ```
 
@@ -159,6 +149,3 @@ const App = () => {
 주석은 `{* comment *}` 형식으로 작성한다.
 또한, `시작태그` 를 여러줄로 작성하면, 해당 줄 내부에서는 `// comment`  
 형식을 사용가능하다.
-
-# ESLint 와 Prettier
-
